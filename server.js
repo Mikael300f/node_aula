@@ -4,10 +4,8 @@ const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
 const homeRoutes = require('./routes/homeRoutes');
 app.use('/home', homeRoutes);
-
 app.get('/', (req, res) => {
   res.status(200).render('index', 
     { 
@@ -15,7 +13,6 @@ app.get('/', (req, res) => {
         message: 'Bem-vindo ao Express com EJS!' 
     });
 });
-
 app.get('/sobre', (req, res) => {
     res.status(200).render('index', 
         { 
@@ -33,6 +30,11 @@ rotaAdmin.get('/', (req, res) => {
 rotaAdmin.get('/usuarios', (req, res) => {
   res.status(200).send('Gerenciamento de Usuários');
 });
+rotaAdmin.get('/xxxx', (req, res) => { 
+  const nome = "Admin";
+  res.status(200).json({ nome });
+});
+
 
 app.use('/admin', rotaAdmin);
 
