@@ -6,6 +6,19 @@ exports.index = (req, res) => {
         });
   };
   
+
+
+
+
+
+
+
+
+
+
+
+
+  
 exports.cadastrou = (req, res) => {
 res.status(200).render('index', 
     { 
